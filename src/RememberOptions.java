@@ -8,9 +8,9 @@ import java.util.Properties;
 import javax.swing.JOptionPane;
 
 public class RememberOptions {
-	
+
 	private Properties property = new Properties();
-	private static File file = new File ("settings.properties");
+	private static File file = new File("settings.properties");
 
 	public void setDefaultOptions() {
 
@@ -38,30 +38,36 @@ public class RememberOptions {
 		try {
 			FileOutputStream saveFile = new FileOutputStream(file);
 			property.store(saveFile, "Ustawienia check box");
-			
+
 			saveFile.close();
 		} catch (FileNotFoundException e) {
-			
+			JOptionPane.showMessageDialog(null,
+					"B³¹d Wejœcia/Wyjœcia\nNie mogê zapisaæ ustawieñ\nSprawdŸ prawa do folderu/pliku", "B³¹d zapisz",
+					JOptionPane.ERROR_MESSAGE);
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "B³¹d Wejœcia/Wyjœcia", "B³¹d zapisz", JOptionPane.ERROR_MESSAGE);
 		}
 	}
-	
+
 	public void loadOptions() {
 
 		try {
 			FileInputStream loadFile = new FileInputStream(file);
 			property.load(loadFile);
-			
+
 			loadFile.close();
 		} catch (FileNotFoundException e) {
-						
+			JOptionPane.showMessageDialog(null,
+					"B³¹d Wejœcia/Wyjœcia\nNie mogê odczytaæ ustawieñ.\nSprawdŸ prawa do folderu/pliku", "B³¹d odczytu",
+					JOptionPane.ERROR_MESSAGE);
+			setDefaultOptions();
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "B³¹d Wejœcia/Wyjœcia", "B³¹d za³aduj", JOptionPane.ERROR_MESSAGE);
+			setDefaultOptions();
 		}
 	}
 
-	public void checkFile() {	
+	public void checkFile() {
 
 		if (file.exists() == true)
 			loadOptions();
@@ -92,8 +98,6 @@ public class RememberOptions {
 	}
 
 	public static void main(String[] args) {
-
-		
 
 	}
 
