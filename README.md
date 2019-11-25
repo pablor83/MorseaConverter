@@ -16,7 +16,7 @@ Morse Converter is a JAVA app.
 The program was written as part of learning and developing programming skills in JAVA
 
 ## Technologies
-* JAVA
+* JAVA 1.8
 
 ## Setup
 Compile `javac *.java`  
