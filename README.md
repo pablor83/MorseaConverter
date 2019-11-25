@@ -2,7 +2,7 @@
 
 >A simple Morse converter translates between the Latin alphabet and the Morse code.
 
-![Example view] (https://raw.githubusercontent.com/pablor83/MorseaConverter/master/MorseaConverter.jpg)
+![Example view](https://raw.githubusercontent.com/pablor83/MorseaConverter/master/MorseaConverter.jpg)
 
 ## Table of contents
 * [General info](#general-info)
